@@ -16,7 +16,7 @@ npm install --save json-native
 
 ## `#stringify(subject)`
 
-This takes any valid javascript type and converts it to json format. For most types this not be any different than `JSON.stringify`. For Dates, RegExps and Functions how ever, this will provide a key to allow the value to be converted back to it's native form.
+This takes any valid javascript type and converts it to json format. For most types this will not be any different than `JSON.stringify`. For Dates, RegExps and Functions how ever, this will provide a key to allow the value to be converted back to it's native form.
 
 ```javascript
 var jn = require('json-native');
@@ -25,12 +25,12 @@ var jn = require('json-native');
 jn.stringify({k: 'val'}); // => '{"k":"val"}'
 
 // special case
-js.stringify({k: new Date()}); // => '{"d":"::type::date 2015-03-06T03:08:59.391Z"}
+js.stringify({k: new Date()}); // => '{"d":"{"__type":"date","__value":"2015-03-06T18:25:11.682Z"}"}'
 ```
 
 ## `#parse(json)`
 
-This takes any valid json and converts it to it's native form. Contrary to `JSON.parse`, this will also convert types like Dates, RegExps or Functions to thier native form, so longs as the json was stringifed via `#stringify`.
+This takes any valid json and converts it to it's native form. Contrary to `JSON.parse`, this will also convert types like Dates, RegExps or Functions to their native form, so longs as the json was stringifed via `#stringify`.
 
 ```javascript
 var jn = require('json-native');
@@ -38,7 +38,7 @@ var jn = require('json-native');
 var date = new Date();
 var json = jn.stringify({d: date});
 
-date.toString() === jn.parse(json).d.toString(); // => true
+date.getHours() === jn.parse(json).d.getHours(); // => true
 ```
 
 # License

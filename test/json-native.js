@@ -7,7 +7,10 @@ test('json-native should stringify and parse date', function (t) {
   var date = new Date();
   var json = jn.stringify({d: date});
 
-  t.equal(date.toString(), jn.parse(json).d.toString());
+  console.log(jn.stringify({k: 'val'}));
+  console.log(jn.stringify({d: new Date()}));
+
+  t.equal(date.getHours(), jn.parse(json).d.getHours());
   t.end();
 });
 
