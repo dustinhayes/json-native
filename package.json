@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Parse and stringify native javascript types",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dustinhayes/json-native.git"
+  },
   "scripts": {
     "test": "jshint . && tape test/*.js"
   },
