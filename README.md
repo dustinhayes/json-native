@@ -30,7 +30,7 @@ js.stringify({k: new Date()}); // => '{"d":"::type::date 2015-03-06T03:08:59.391
 
 ## `#parse(json)`
 
-This takes any valid json and converts it to it's native form. Contrary to `JSON.parse`, this will also convert types like Dates, RegExps or Functions to thier native form, so longs as the json was stringifed via `#stringify`.
+This takes any valid json and converts it to it's native form. Contrary to `JSON.parse`, this will also convert types like Dates, RegExps or Functions to their native form, so longs as the json was stringifed via `#stringify`.
 
 ```javascript
 var jn = require('json-native');
