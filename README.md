@@ -16,7 +16,7 @@ npm install --save json-native
 
 ## `#stringify(subject)`
 
-This takes any valid javascript type and converts it to json format. For most types this will not be any different than `JSON.stringify`. For Dates, RegExps and Functions how ever, this will provide a key to allow the value to be converted back to it's native form.
+This takes any valid javascript type and converts it to json format. For most types this will not be any different than `JSON.stringify`. For Dates, RegExps and Functions however, this will provide a key to allow the value to be converted back to it's native form.
 
 ```javascript
 var jn = require('json-native');
