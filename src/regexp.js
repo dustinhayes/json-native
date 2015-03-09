@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-  parse: function (ro) {    
+  parse: function (rj) {
+    var ro = JSON.parse(rj);
     return new RegExp(ro.source, ro.flags);
   },
 

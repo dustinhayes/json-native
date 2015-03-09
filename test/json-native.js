@@ -15,9 +15,9 @@ test('json-native should stringify and parse date', function (t) {
 });
 
 test('json-native should stringify and parse regexp', function (t) {
-  var json = jn.stringify({r: /\w/g});
+  var json = jn.stringify({r: /[0-9]/g});
 
-  t.equal(jn.parse(json).r.test('smelly cat'), true);
+  t.equal(jn.parse(json).r.test('smelly cat'), false);
   t.end();
 });
 
