@@ -27,3 +27,21 @@ test('json-native should stringify and parse function', function (t) {
   t.equal(jn.parse(json).f(2, 3), 5);
   t.end();
 });
+
+test('json-native should stringify and parse function', function (t) {
+  var object = {
+    o: {
+      p: {
+        n: 10,
+        r: /\w/g,
+        d: new Date(),
+        f: function add(x, y) { return x + y; }
+      }
+    }
+  };
+
+  var json = jn.stringify(object);
+
+  t.equal(jn.parse(json).o.p.f(2, 3), 5);
+  t.end();
+});
