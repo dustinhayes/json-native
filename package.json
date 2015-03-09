@@ -1,6 +1,6 @@
 {
   "name": "json-native",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parse and stringify native javascript types",
   "main": "src/index.js",
   "repository": {
