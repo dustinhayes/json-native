@@ -8,7 +8,8 @@
     "url": "git://github.com/dustinhayes/json-native.git"
   },
   "scripts": {
-    "test": "jshint . && tape test/*.js"
+    "test": "jshint . && tape test/*.js",
+    "build": "browserify src/index.js --standalone JSONNative | uglifyjs > dist/JSONNative.js"
   },
   "author": "Dustin Hayes",
   "license": "MIT",
@@ -16,7 +17,9 @@
     "type-of": "^2.0.1"
   },
   "devDependencies": {
+    "browserify": "^9.0.3",
     "jshint": "^2.6.3",
-    "tape": "^3.5.0"
+    "tape": "^3.5.0",
+    "uglify-js": "^2.4.16"
   }
 }
